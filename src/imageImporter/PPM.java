@@ -77,7 +77,7 @@ public class PPM {
 		int numPixels = dim.width * dim.height;
 
 		picture = new Color[dim.height][dim.width];
-		PrintWriter out = new PrintWriter(new FileWriter("./outputfile.txt"));
+	//	PrintWriter out = new PrintWriter(new FileWriter("./outputfile.txt"));
 		for (int i = 0; i < numPixels; i++) {
 			int r = in.read();
 			int g = in.read();
@@ -91,10 +91,10 @@ public class PPM {
 			picture[(int) Math.ceil(i / dim.width)][i % dim.width] = new Color(r, g,
 					b);
 
-			out.println(rgb(r, g, b));
+			//out.println(rgb(r, g, b));
 
 		}
-		out.close();
+		//out.close();
 		in.close();
 	}
 

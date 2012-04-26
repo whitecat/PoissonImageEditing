@@ -13,10 +13,13 @@ public class sandbox {
 		
 		
 		PPM picture = new PPM(filename);
-		GradientConverter converted = new GradientConverter(picture);
-		converted.getImageGradientX();
-		converted.getImageGradientY();
-
+		Gradient converted = new Gradient(picture);
+//		converted.getImageGradientX();
+//		converted.getImageGradientY();
+		
+		PoissonSolver test = new PoissonSolver();
+		
+		test.integrate(converted, converted.getColorDivG());
 		
 		out.close();
 	}

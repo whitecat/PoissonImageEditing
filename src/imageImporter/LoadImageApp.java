@@ -21,10 +21,10 @@ public class LoadImageApp extends Component {
        try {
    		String filename = "./family.ppm";
    		PPM picture = new PPM(filename);
-		GradientConverter converted = new GradientConverter(picture);
+		Gradient converted = new Gradient(picture);
 
    		
-           img = converted.getImageGradientX();
+           img = converted.getImageGradient(converted.getGradientX());
        } catch (IOException e) {
        }
  
