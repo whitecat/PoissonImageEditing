@@ -1,0 +1,51 @@
+\begin{thebibliography}{\protect\citename{Bertalmio et~al\mbox{.} }2000}
+
+\bibitem[\protect\citename{Ballester et~al\mbox{.} }2001]{Ballester}
+{\sc Ballester, C., Bertalmio, M., Caselles, V., Sapiro, G., and Verdera, J.}
+\newblock 2001.
+\newblock Filling-in by joint interpolation of vector fields and gray levels.
+\newblock {\em Image Processing, IEEE Transactions on 10}, 8 (aug), 1200
+  --1211.
+
+\bibitem[\protect\citename{Bertalmio et~al\mbox{.} }2000]{Bertalmio}
+{\sc Bertalmio, M., Sapiro, G., Caselles, V., and Ballester, C.}
+\newblock 2000.
+\newblock Image inpainting.
+\newblock In {\em Proceedings of the 27th annual conference on Computer
+  graphics and interactive techniques}, ACM Press/Addison-Wesley Publishing
+  Co., New York, NY, USA, SIGGRAPH '00, 417--424.
+
+\bibitem[\protect\citename{Jia et~al\mbox{.} }2006]{ddp}
+{\sc Jia, J., Sun, J., Tang, C.-K., and Shum, H.-Y.}
+\newblock 2006.
+\newblock Drag-and-drop pasting.
+\newblock {\em ACM Transactions on Graphics (SIGGRAPH)\/}.
+
+\bibitem[\protect\citename{P\'{e}rez et~al\mbox{.} }2003]{Perez}
+{\sc P\'{e}rez, P., Gangnet, M., and Blake, A.}
+\newblock 2003.
+\newblock Poisson image editing.
+\newblock {\em ACM Trans. Graph. 22\/} (July), 313--318.
+
+\bibitem[\protect\citename{Richardson }1972]{richardson72}
+{\sc Richardson, W.~H.}
+\newblock 1972.
+\newblock Bayesian-based iterative method of image restoration.
+\newblock {\em J. Opt. Soc. Am. 62}, 1 (Jan), 55--59.
+
+\bibitem[\protect\citename{Shen et~al\mbox{.} }2005]{Shen}
+{\sc Shen, J., Jin, X., and Zhou, C.}
+\newblock 2005.
+\newblock Gradient based image completion by solving poisson equation.
+\newblock In {\em Advances in Multimedia Information Processing - PCM 2005},
+  Y.-S. Ho and H.~Kim, Eds., vol.~3767 of {\em Lecture Notes in Computer
+  Science}. Springer Berlin / Heidelberg, 257--268.
+
+\bibitem[\protect\citename{Sun et~al\mbox{.} }2005]{sun}
+{\sc Sun, M., Yang, R., Yun, L., Landon, G., Seales, B., and Brown, M.}
+\newblock 2005.
+\newblock Geometric and photometric restoration of distorted documents.
+\newblock In {\em Computer Vision, 2005. ICCV 2005. Tenth IEEE International
+  Conference on}, vol.~2, 1117 --1123 Vol. 2.
+
+\end{thebibliography}
