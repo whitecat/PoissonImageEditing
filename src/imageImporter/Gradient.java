@@ -1,9 +1,5 @@
 package imageImporter;
 
-import java.awt.Color;
-import java.awt.Image;
-import java.awt.Toolkit;
-import java.awt.image.MemoryImageSource;
 
 public class Gradient {
 	private ColorBean[][] pic;
@@ -43,17 +39,6 @@ public class Gradient {
 				colorGradientY[i][j] = new ColorBean(gradSumYRed, gradSumYGreen, gradSumYBlue);
 			}
 		}
-	}
-
-	public int[] getArray(Color[][] gradient, int width, int height) {
-		int[] data = null;
-		data = new int[height * width];
-		for (int i = 0; i < height; i++) {
-			for (int j = 0; j < width; j++) {
-				data[(width) * i + j] = (gradient[i][j].getRGB());
-			}
-		}
-		return data;
 	}
 
 	private void calculageDivGPerColor() {
@@ -156,70 +141,7 @@ public class Gradient {
 		}
 	}
 
-	void imageNormalize(double[][] u, double[][] out, int width, int height) {
-		int i, j;
 
-		double max = -10000000.0, min = 1000000000.0;
-
-		for (i = 0; i < height; i++) {
-			for (j = 0; j < width; j++) {
-				if (u[i][j] > max)
-					max = u[i][j];
-				if (u[i][j] < min)
-					min = u[i][j];
-			}
-		}
-		for (i = 0; i < height; i++) {
-			for (j = 0; j < width; j++) {
-				if ((u[i][j] - min) / (max - min) * 255 < 0) {
-					System.out.println((u[i][j] - min) / (max - min) * 255);
-				}
-				out[i][j] = 255-((u[i][j] - min) / (max - min) * 255);
-			}
-		}
-	}
-
-	public Color[][] changeColorBean(ColorBean[][] gradient) {
-		double r[][] = null;
-		double b[][] = null;
-		double g[][] = null;
-		double outr[][] = null;
-		double outb[][] = null;
-		double outg[][] = null;
-
-		int height = gradient.length;
-		int width = gradient[0].length;
-
-		b = new double[height + 1][width + 1];
-		r = new double[height + 1][width + 1];
-		g = new double[height + 1][width + 1];
-		outb = new double[height + 1][width + 1];
-		outr = new double[height + 1][width + 1];
-		outg = new double[height + 1][width + 1];
-
-		for (int i = 0; i < height; i++) {
-			for (int j = 0; j < width; j++) {
-				r[i + 1][j + 1] = gradient[i][j].getRed();
-				b[i + 1][j + 1] = gradient[i][j].getBlue();
-				g[i + 1][j + 1] = gradient[i][j].getGreen();
-			}
-		}
-
-		imageNormalize(r, outr, width, height);
-		imageNormalize(b, outb, width, height);
-		imageNormalize(g, outg, width, height);
-
-		Color[][] result = new Color[height][width];
-		for (int i = 1; i <= height; i++) {
-			for (int j = 1; j <= width; j++) {
-				result[i - 1][j - 1] = new Color((int) outr[i][j], (int) outg[i][j],
-						(int) outb[i][j]);
-			}
-		}
-
-		return result;
-
-	}
 
 
 
@@ -245,14 +167,6 @@ public class Gradient {
 
 	public int getHeight() {
 		return height;
-	}
-
-	public Image getImageGradient(ColorBean[][] gradient) {
-		
-		int[] data = getArray(changeColorBean(gradient), width, height);
-
-		MemoryImageSource memoryImageSource = new MemoryImageSource(width, height, data, 0, width);
-		return Toolkit.getDefaultToolkit().createImage(memoryImageSource);
 	}
 
 	public void mergeGradient(Gradient converted2) {

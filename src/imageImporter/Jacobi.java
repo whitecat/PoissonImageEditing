@@ -90,23 +90,10 @@ public class Jacobi {
 					}
 				}
 			}
-			checkError(result, previousIteration);
+			Util.checkError(result, previousIteration, height,  width );
 			previousIteration = result;
 
 		}
-	}
-
-	private void checkError(double[][] result, double[][] previousIteration) {
-		double matrixSum = 0;
-		double sum = 0;
-		for (int i = 0; i < height; i++) {
-			for (int j = 0; j < width; j++) {
-				sum = previousIteration[i][j] - result[i][j];
-				matrixSum += (sum * sum);
-			}
-		}
-		// Math.sqrt(matrixSum * matrixSum);
-		System.out.println("Error between matrix: " + Math.sqrt(matrixSum));
 	}
 
 	private void solve(double[][] matrix, double[][] mask, int iterations) {

@@ -16,22 +16,22 @@ public class PoissonImageEditor {
 	}
 
 	public PoissonImageEditor() throws UnsupportedEncodingException, IOException {
-		// String filename = "./boxes_1.ppm";
-		// PPM picture = new PPM(filename);
-		// Gradient converted = new Gradient(picture);
-		// PrintWriter out = new PrintWriter(new
-		// FileWriter("./outputfile.txt"));
+		int height;	
+		int width;
+		
 
 		String filename1 = "./images/family.ppm";
 		// String filename2 = "./watermark.ppm";
 		PPM picture1 = new PPM(filename1);
+		height = picture1.getPicture().length;
+		width = picture1.getPicture()[0].length;
 		// PPM picture2 = new PPM(filename2);
 		Gradient converted1 = new Gradient(picture1);
 		// Gradient converted2 = new Gradient(picture2);
 		// converted1.mergeGradient(converted2);
 
-		 PoissonSolver test = new PoissonSolver();
-		 test.integrate(converted1, converted1.getColorDivG());
+		 PoissonSolver test = new PoissonSolver(1000);
+		 test.integrate(converted1.getColorDivG());
 
 		JFrame frame = new JFrame("ShowImage");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -39,10 +39,12 @@ public class PoissonImageEditor {
 
 		
 //		ShowImage panel = new ShowImage(converted1.getImageGradient(converted1.getColorGradientX()));
-		ShowImage panel = new ShowImage(test.getImage());
+		ShowImage panel = new ShowImage(Util.getImage(test.getResult()));
 		frame.setContentPane(panel);
 		frame.setVisible(true);
 
+		Util.checkError(test.getResult(), picture1.getPicture(),height, width );
+		
 		// img =
 		// converted2.getImageGradient(converted2.changeColorBean(converted2.getColorDivG()));
 		// img =

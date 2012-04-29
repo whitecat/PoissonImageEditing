@@ -17,9 +17,7 @@ public class sandbox {
 //		converted.getImageGradientX();
 //		converted.getImageGradientY();
 		
-		PoissonSolver test = new PoissonSolver();
 		
-		test.integrate(converted, converted.getColorDivG());
 		
 		out.close();
 	}

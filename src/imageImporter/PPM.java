@@ -131,5 +131,4 @@ public class PPM {
 	public ColorBean[][] getPicture() {
 		return pictureBean;
 	}
-	
 }

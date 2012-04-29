@@ -35,8 +35,9 @@
 
 
 
-
 \begin{document}
+\newcommand\result{0.01\%}
+\newcommand\iteration{50000}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -46,7 +47,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Poisson Image reconstruction using Conjugate Gradient}
+\title{Poisson Image Solver}
 
 \newcommand\name{C. Albert Thompson}
 
@@ -66,7 +67,7 @@ The University of British Columbia}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{abstract}
-  Abstract goes here.
+For this paper we present a way to solve Poisson's equation and regenerate images from the divergence of the original image. We first looked at recent work that implement Poisson solvers. From that we found the steps need to decompose an image and find the divergence. Once we found the divergence we used Jacobi's method to solve Poisson's equation and regenerate an image similar to the original.  We found our regenerated images had an error of \result with iterations \iteration. We were able to implement a basic watermark feature that allows us to add watermarks to images. We found future work were we can further implement different types of gradient manipulation. In the end we gained a better understanding of Poisson's equation used to solve for an image.
 \end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -80,24 +81,24 @@ The University of British Columbia}
 \section{Introduction}
 \label{Intro}
 
-Restoring dated or printed images becomes more prominent as older images become effected by time. Using chemicals to print photos is a good way to have them last a long time. A long time is not enough, photos have been around for two hundred years, and photos will inevitably get damaged either by light, or any other of the many ways to damage printed photos. We have a photo that is only about twenty years old and it is facing noticeable damage \ref{fig1}. As you can see here are vertical lines running across the photo and there is noticeable fading of the whole photo. 
+The goal this project is to understand how image reconstruction is done using Poisson's equation, and then implement a simple reconstruction algorithm on an image.
 
+Restoring dated or printed images becomes more prominent as older images become effected by time. Using chemicals to print photos is a good way to have them last a long time. A long time is not enough, photos have been around for two hundred years, and photos will inevitably get damaged either by light, or any other of the many ways to damage printed photos. We have a photo that is only about twenty years old and it is facing noticeable damage \ref{family}. As you can see here are vertical lines running across the photo and there is noticeable fading of the whole photo. 
 
+Restoration of images has been around for many years and early work used Fourier-transformation to restore images \cite{richardson72}. His work was later build upon by future authors such as \cite{Bertalmio}, and \cite{Perez}. They were able to use an old well known equation, Poisson's equation to solve for images and repair damage or images with missing pieces. These authors used Poisson's equation to restore images in more discrete methods.
 
-Restoration of images has been around for many years and early work used Fourier-transformation to restore images \cite{richardson72}. 
+In our project we take a further look at how Poisson's equation can be applied to restoring images. Initial investigation of related work shows that most authors do manipulations on gradient vectors and then restore the image using  divergence.  The reason Poisson's equation is so useful is that it is a partial differential equation, and allows us to compute an image from it's divergence. 
 
-Restoring this photo is possible and can be accomplished by solving Poisson's equation.
+When Poisson's equation is setup properly we may use a linear solver to retrieve images from the divergence. In this paper we discuss the Jacobi method for solving Poisson's equation. Using the Jacobi method we were able to reconstruct an image with an error of only \result in \iteration number of iterations. With these initial results gain a better understanding of linear solvers and Poisson's equation.
 
-One of 
+In this paper we show how to calculate the gradient of an image. We show how to change the image into a scalar function. With the function we are able calculate gradient of an image. The gradient of the image allows us to make minor changes to an image, and even make estimations where images contain artifacts. After we work with gradient we calculate the divergence of an image and restore it using Poisson's equation. 
 
-For the course project of 514 we solve Poisson's equation:
+This process shows how we can add images together to get a completely new image. In this paper we show results of using a Jacobi solver to regenerate an image from its divergence. We also look to manipulate an image divergence by merging two images together to add a simple watermark to an image. The results of this paper are promising and give us many paths to take to improve our methods.
 
-\ensuremath{\nabla^2 \varphi = f}
+The goal this project is to understand how image reconstruction is done using Poisson's equation, and then implement a simple algorithm to regenerate an image from the divergence a vector. 
 
-to restore an image that has been changed to its gradient back into it's original image. Poisson's equation is interesting to solve because we can take 
-
-We plan to find out how Poisson's equation is used to remove, or blur, artifacts in images. Poisson's equation needs an image to be in the form of normal vectors. This means that we will need to write a program to take input of an image and convert it to a gradient field \cite{Perez}. We also will used conjugate gradient to simplify the problem. The goal this project is to understand how image reconstruction is done using Poisson's equation, and then implement a simple reconstruction algorithm on an image.
-
+The sections are broken down as follows. In section 2 I discuss current research in Poisson image restoration. Section 3 is dedicated to introducing explaining Poisson's equation, gradients and a way to solve Poisson's equation for image restoration. Section 4 describes artifacts and proposed methods to remove them. In section 5 we discuss future work. Section 6 is the conclusion.
+ 
 \begin{figure}
 \centering
 \includegraphics[width=.44\textwidth]{fig/family.jpg}
@@ -279,7 +280,7 @@ This algorithm needs only one input which is the divergence vector {\bf div}. It
 
 \section{Artifacts}
 
-We use the Jacobi method on a number of images and compare them to the original image. There are a few artifacts in the resulting image. The watermark functionality also can be improved. 
+We use the Jacobi method on a number of images and compare them to the original image. There are a few artifacts in the resulting image. The watermark functionality also can be improved. Our final images had an aveage of \result error when compared to the original image, when doing \iteration iterations.
 
 {\bf Regenerating image} After running Jacobi method figure \ref{familyResult} is an example of the result. This image compared to the the original \ref{family} it has good coloring in the middle of the picture. One of the problems in the picture are that the boarders are white and do not have the same darker coloring of the original image. The artifacts occur due to my method of dealing with the boarder of the image, using the Jacobi method.
 

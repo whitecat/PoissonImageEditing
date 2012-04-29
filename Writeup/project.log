@@ -1,7 +1,10 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.2.20)  28 APR 2012 19:00
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.2.20)  28 APR 2012 20:48
 entering extended mode
-**C:/Users/lenovo/Dropbox/Courses/514/Project/Writeup/project.tex
-(C:/Users/lenovo/Dropbox/Courses/514/Project/Writeup/project.tex
+**C:/Users/lenovo/Dropbox/Courses/514/Project/PoissonImageEditing/Writeup/proje
+ct.tex
+
+(C:/Users/lenovo/Dropbox/Courses/514/Project/PoissonImageEditing/Writeup/projec
+t.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -13,7 +16,9 @@ an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese,
 romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
 sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
 senglishmax, welsh, loaded.
-(C:\Users\lenovo\Dropbox\Courses\514\Project\Writeup\acmsiggraph.cls
+
+(C:\Users\lenovo\Dropbox\Courses\514\Project\PoissonImageEditing\Writeup\acmsig
+graph.cls
 Document Class: acmsiggraph 2005/01/22 ACM SIGGRAPH
 
 Class acmsiggraph Warning: 10pt option used in camera-ready mode.
@@ -306,24 +311,25 @@ Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 LaTeX Warning: Unused global option(s):
     [twopage].
 
-(C:\Users\lenovo\Dropbox\Courses\514\Project\Writeup\project.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 39.
 
-("C:\opt\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+(C:\Users\lenovo\Dropbox\Courses\514\Project\PoissonImageEditing\Writeup\projec
+t.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 38.
+ ("C:\opt\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 ("C:\opt\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
@@ -341,7 +347,7 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 \everyMPtoPDFconversion=\toks28
 )
 \AtBeginShipoutBox=\box29
-Package hyperref Info: Link coloring OFF on input line 39.
+Package hyperref Info: Link coloring OFF on input line 38.
  ("C:\opt\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
@@ -350,118 +356,129 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count116
 )
-LaTeX Info: Redefining \ref on input line 39.
-LaTeX Info: Redefining \pageref on input line 39.
-LaTeX Info: Redefining \nameref on input line 39.
+LaTeX Info: Redefining \ref on input line 38.
+LaTeX Info: Redefining \pageref on input line 38.
+LaTeX Info: Redefining \nameref on input line 38.
 
-(C:\Users\lenovo\Dropbox\Courses\514\Project\Writeup\project.out)
-(C:\Users\lenovo\Dropbox\Courses\514\Project\Writeup\project.out)
+(C:\Users\lenovo\Dropbox\Courses\514\Project\PoissonImageEditing\Writeup\projec
+t.out)
+(C:\Users\lenovo\Dropbox\Courses\514\Project\PoissonImageEditing\Writeup\projec
+t.out)
 \@outlinefile=\write3
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 59.
-
-("C:\opt\MiKTeX 2.9\tex\latex\psnfss\ot1phv.fd"
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 60.
+ ("C:\opt\MiKTeX 2.9\tex\latex\psnfss\ot1phv.fd"
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 59.
-LaTeX Font Info:    Try loading font information for U+lasy on input line 59.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 60.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 60.
 
 ("C:\opt\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 59.
+LaTeX Font Info:    Try loading font information for U+msa on input line 60.
 
 ("C:\opt\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 59.
+LaTeX Font Info:    Try loading font information for U+msb on input line 60.
 
 ("C:\opt\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 68.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 83.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 69.
 
-
-LaTeX Warning: Reference `fig1' on page 1 undefined on input line 83.
-
-<fig/family.jpg, id=41, 1300.86pt x 731.73375pt>
+<fig/family.jpg, id=43, 1300.86pt x 731.73375pt>
 File: fig/family.jpg Graphic file (type jpg)
  <use fig/family.jpg>
-Package pdftex.def Info: fig/family.jpg used on input line 103.
+Package pdftex.def Info: fig/family.jpg used on input line 104.
 (pdftex.def)             Requested size: 222.59283pt x 125.20816pt.
  [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
- <C:/Users/lenovo/Dropbox/Courses/514/Project/Writeup/fig/family.jpg>]
+]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 126.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 127.
 
-<fig/notations.jpg, id=69, 341.47575pt x 121.05225pt>
+<fig/notations.jpg, id=64, 341.47575pt x 121.05225pt>
 File: fig/notations.jpg Graphic file (type jpg)
  <use fig/notations.jpg>
-Package pdftex.def Info: fig/notations.jpg used on input line 136.
+Package pdftex.def Info: fig/notations.jpg used on input line 137.
 (pdftex.def)             Requested size: 222.59283pt x 78.90836pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 138.
 
-[2 <C:/Users/lenovo/Dropbox/Courses/514/Project/Writeup/fig/notations.jpg>]
-<fig/gradientX.jpg, id=93, 781.11826pt x 440.847pt>
+[2 <C:/Users/lenovo/Dropbox/Courses/514/Project/PoissonImageEditing/Writeup/fig
+/family.jpg>] <fig/gradientX.jpg, id=89, 781.11826pt x 440.847pt>
 File: fig/gradientX.jpg Graphic file (type jpg)
- <use fig/gradientX.jpg>
-Package pdftex.def Info: fig/gradientX.jpg used on input line 186.
-(pdftex.def)             Requested size: 222.59283pt x 125.62251pt.
 
-<fig/gradientY.jpg, id=103, 781.7205pt x 440.24475pt>
+<use fig/gradientX.jpg>
+Package pdftex.def Info: fig/gradientX.jpg used on input line 187.
+(pdftex.def)             Requested size: 222.59283pt x 125.62251pt.
+ [3 <C:/Users/lenovo/Dropbox/Courses/514/Project/PoissonImageEditing/Writeup/fi
+g/notations.jpg> <C:/Users/lenovo/Dropbox/Courses/514/Project/PoissonImageEditi
+ng/Writeup/fig/gradientX.jpg>]
+<fig/gradientY.jpg, id=117, 781.7205pt x 440.24475pt>
 File: fig/gradientY.jpg Graphic file (type jpg)
  <use fig/gradientY.jpg>
-Package pdftex.def Info: fig/gradientY.jpg used on input line 216.
+Package pdftex.def Info: fig/gradientY.jpg used on input line 217.
 (pdftex.def)             Requested size: 222.59283pt x 125.35686pt.
 
-<fig/divG.jpg, id=104, 782.32275pt x 439.04025pt>
+<fig/divG.jpg, id=118, 782.32275pt x 439.04025pt>
 File: fig/divG.jpg Graphic file (type jpg)
  <use fig/divG.jpg>
-Package pdftex.def Info: fig/divG.jpg used on input line 224.
+Package pdftex.def Info: fig/divG.jpg used on input line 225.
 (pdftex.def)             Requested size: 222.59283pt x 124.92009pt.
- [3 <C:/Users/lenovo/Dropbox/Courses/514/Project/Writeup/fig/gradientX.jpg> <C:
-/Users/lenovo/Dropbox/Courses/514/Project/Writeup/fig/gradientY.jpg> <C:/Users/
-lenovo/Dropbox/Courses/514/Project/Writeup/fig/divG.jpg>]
 
-LaTeX Warning: Reference `poissonGrid' on page 4 undefined on input line 252.
 
-<fig/matrix.jpg, id=122, 320.397pt x 201.1515pt>
+LaTeX Warning: Reference `poissonGrid' on page 4 undefined on input line 253.
+
+<fig/matrix.jpg, id=123, 320.397pt x 201.1515pt>
 File: fig/matrix.jpg Graphic file (type jpg)
  <use fig/matrix.jpg>
-Package pdftex.def Info: fig/matrix.jpg used on input line 256.
+Package pdftex.def Info: fig/matrix.jpg used on input line 257.
 (pdftex.def)             Requested size: 222.59283pt x 139.74924pt.
+ [4 <C:/Users/lenovo/Dropbox/Courses/514/Project/PoissonImageEditing/Writeup/fi
+g/gradientY.jpg> <C:/Users/lenovo/Dropbox/Courses/514/Project/PoissonImageEditi
+ng/Writeup/fig/divG.jpg> <C:/Users/lenovo/Dropbox/Courses/514/Project/PoissonIm
+ageEditing/Writeup/fig/matrix.jpg>]
+
+LaTeX Warning: Reference `familyBoarder' on page 5 undefined on input line 287.
 
 
-LaTeX Warning: Reference `familyBoarder' on page 4 undefined on input line 286.
-
-
-[4 <C:/Users/lenovo/Dropbox/Courses/514/Project/Writeup/fig/matrix.jpg>]
-<fig/familyResult.jpg, id=136, 770.27776pt x 411.939pt>
+<fig/familyResult.jpg, id=137, 770.27776pt x 411.939pt>
 File: fig/familyResult.jpg Graphic file (type jpg)
 
 <use fig/familyResult.jpg>
-Package pdftex.def Info: fig/familyResult.jpg used on input line 292.
+Package pdftex.def Info: fig/familyResult.jpg used on input line 293.
 (pdftex.def)             Requested size: 222.59283pt x 119.0381pt.
- <fig/mask.jpg, id=137, 781.7205pt x 440.847pt>
+ <fig/mask.jpg, id=138, 781.7205pt x 440.847pt>
 File: fig/mask.jpg Graphic file (type jpg)
 
 <use fig/mask.jpg>
-Package pdftex.def Info: fig/mask.jpg used on input line 300.
+Package pdftex.def Info: fig/mask.jpg used on input line 301.
 (pdftex.def)             Requested size: 222.59283pt x 125.52834pt.
 
-(C:\Users\lenovo\Dropbox\Courses\514\Project\Writeup\project.bbl) [5 <C:/Users/
-lenovo/Dropbox/Courses/514/Project/Writeup/fig/familyResult.jpg> <C:/Users/leno
-vo/Dropbox/Courses/514/Project/Writeup/fig/mask.jpg>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 337.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 337.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-(C:\Users\lenovo\Dropbox\Courses\514\Project\Writeup\project.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 337.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 337.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5 <C:/Users/lenovo/Dropbox/Courses/514/Project/PoissonImageEditing/Writeup/fi
+g/familyResult.jpg> <C:/Users/lenovo/Dropbox/Courses/514/Project/PoissonImageEd
+iting/Writeup/fig/mask.jpg>]
+(C:\Users\lenovo\Dropbox\Courses\514\Project\PoissonImageEditing\Writeup\projec
+t.bbl) [6
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 338.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 338.
+
+(C:\Users\lenovo\Dropbox\Courses\514\Project\PoissonImageEditing\Writeup\projec
+t.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 338.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 338.
 Package rerunfilecheck Info: File `project.out' has not changed.
 (rerunfilecheck)             Checksum: 54DB6AD799AA14786D94FE3934E3714E;480.
 
@@ -470,13 +487,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 6239 strings out of 494045
- 87347 string characters out of 3152414
- 180533 words of memory out of 3000000
- 9386 multiletter control sequences out of 15000+200000
+ 6241 strings out of 494045
+ 87662 string characters out of 3152414
+ 179533 words of memory out of 3000000
+ 9387 multiletter control sequences out of 15000+200000
  29067 words of font info for 72 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 29i,10n,45p,822b,324s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,11n,45p,853b,351s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/opt/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/opt/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmbx10.pfb><C:/opt/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/cm/cmex10.pfb><C:/opt/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
@@ -489,9 +506,9 @@ msfonts/cm/cmr5.pfb><C:/opt/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb>
 .pfb><C:/opt/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/opt/MiKTeX 2.9/fon
 ts/type1/urw/times/utmr8a.pfb><C:/opt/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on project.pdf (5 pages, 921671 bytes).
+Output written on project.pdf (6 pages, 925596 bytes).
 PDF statistics:
- 204 PDF objects out of 1000 (max. 8388607)
- 43 named destinations out of 1000 (max. 500000)
+ 211 PDF objects out of 1000 (max. 8388607)
+ 44 named destinations out of 1000 (max. 500000)
  113 words of extra memory for PDF output out of 10000 (max. 10000000)
 
