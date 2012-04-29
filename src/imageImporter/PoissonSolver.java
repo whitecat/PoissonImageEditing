@@ -4,13 +4,15 @@ import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.image.MemoryImageSource;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 
 public class PoissonSolver {
 
 	private int height;
 	private int width;
 	private int[] solution;
-	Color[][] result;
+	ColorBean[][] result;
 
 	public PoissonSolver() {
 		// TODO Auto-generated constructor stub
@@ -20,59 +22,65 @@ public class PoissonSolver {
 	 * Compute the integral of pixels
 	 * 
 	 * @param grad
-	 *            Gradients to
-	 * @return
+	 *            Gradients to convert
+	 * @throws IOException
+	 * @throws UnsupportedEncodingException
 	 */
-	public void integrate(Gradient grad, ColorBean[][] divG) {
+	public void integrate(Gradient grad, ColorBean[][] divG) throws UnsupportedEncodingException,
+			IOException {
+		// String filename1 = "./mask.ppm";
+		// ColorBean [][]maskOriginal = new PPM(filename1).getPicture();
+
 		double r[][] = null;
 		double b[][] = null;
 		double g[][] = null;
+		double mask[][] = null;
 		double outr[][] = null;
 		double outb[][] = null;
 		double outg[][] = null;
-		int nn = 513;
-		width = 513;
-		height = 513;
+		height = divG.length;
+		width = divG[0].length;
+		Jacobi matrix;
 
-		b = new double[height + 1][width + 1];
-		r = new double[height + 1][width + 1];
-		g = new double[height + 1][width + 1];
-		outb = new double[height + 1][width + 1];
-		outr = new double[height + 1][width + 1];
-		outg = new double[height + 1][width + 1];
-		
-		for (int i = 1; i <= height; i++) {
-			for (int j = 1; j <= width; j++) {
-				r[i][j] = divG[i - 1][j +200].getRed();
-				b[i][j] = divG[i - 1][j +200].getBlue();
-				g[i][j] = divG[i - 1][j +200].getGreen();
+		b = new double[height][width];
+		r = new double[height][width];
+		g = new double[height][width];
+		outb = new double[height][width];
+		outr = new double[height][width];
+		outg = new double[height][width];
+		mask = new double[height][width];
+
+		for (int i = 0; i < height; i++) {
+			for (int j = 0; j < width; j++) {
+				// mask[i][j] = maskOriginal[i][j].getRed();
+				r[i][j] = divG[i][j].getRed();
+				b[i][j] = divG[i][j].getBlue();
+				g[i][j] = divG[i][j].getGreen();
 			}
 		}
 
-		int Vcycles = 4;
-		// solve linear equation
-		Integration inte = new Integration();
+		int Vcycles = 50000;
 
-		try {
-			inte.mglin(r, nn, Vcycles);
-			inte.mglin(b, nn, Vcycles);
-			inte.mglin(g, nn, Vcycles);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		grad.imageNormalize(r, outr, nn, nn);
-		grad.imageNormalize(b, outb, nn, nn);
-		grad.imageNormalize(g, outg, nn, nn);
+		matrix = new Jacobi(r, Vcycles);
+		r = matrix.getResult();
+		matrix = new Jacobi(g, Vcycles);
+		g = matrix.getResult();
+		matrix = new Jacobi(b, Vcycles);
+		b = matrix.getResult();
 
-		Color[][] result = new Color[nn][nn];
-		for (int i = 1; i <= nn; i++) {
-			for (int j = 1; j <= nn; j++) {
-				result[i - 1][j - 1] = new Color((int) outr[i][j], (int) outg[i][j],
-						(int) outb[i][j]);
+		grad.imageNormalize(r, outr, width, height);
+		grad.imageNormalize(b, outb, width, height);
+		grad.imageNormalize(g, outg, width, height);
+
+		result = new ColorBean[height][width];
+		for (int i = 0; i < height; i++) {
+			for (int j = 0; j < width; j++) {
+
+				result[i][j] = new ColorBean((int) outr[i][j], (int) outg[i][j], (int) outb[i][j]);
 			}
 		}
 
-		solution = grad.getArray(result, nn, nn);
+		solution = grad.getArray(grad.changeColorBean(result), width, height);
 	}
 
 	public Image getImage() {
@@ -83,4 +91,7 @@ public class PoissonSolver {
 
 	}
 
+	public ColorBean[][] getResult() {
+		return result;
+	}
 }

@@ -21,6 +21,8 @@ public class PPM {
 
 	private Color picture[][] = null;
 
+	private ColorBean[][] pictureBean;
+
 	/**
 	 * Creates a PPM image from a file
 	 * <p>
@@ -35,8 +37,7 @@ public class PPM {
 	 *             if file is not a binary(P6) PPM of 255 colors
 	 */
 	@SuppressWarnings("deprecation")
-	public PPM(String filename) throws IOException,
-			UnsupportedEncodingException {
+	public PPM(String filename) throws IOException, UnsupportedEncodingException {
 		FileInputStream fis = new FileInputStream(filename);
 
 		// XXX: The source data to the StreamTokenizer can't buffered, since we
@@ -77,7 +78,9 @@ public class PPM {
 		int numPixels = dim.width * dim.height;
 
 		picture = new Color[dim.height][dim.width];
-	//	PrintWriter out = new PrintWriter(new FileWriter("./outputfile.txt"));
+		pictureBean = new ColorBean[dim.height][dim.width];
+		// PrintWriter out = new PrintWriter(new
+		// FileWriter("./outputfile.txt"));
 		for (int i = 0; i < numPixels; i++) {
 			int r = in.read();
 			int g = in.read();
@@ -88,13 +91,13 @@ public class PPM {
 
 			data[i] = rgb(r, g, b);
 
-			picture[(int) Math.ceil(i / dim.width)][i % dim.width] = new Color(r, g,
-					b);
+			picture[(int) Math.ceil(i / dim.width)][i % dim.width] = new Color(r, g, b);
+			pictureBean[(int) Math.ceil(i / dim.width)][i % dim.width] = new ColorBean(r, g, b);
 
-			//out.println(rgb(r, g, b));
+			// out.println(rgb(r, g, b));
 
 		}
-		//out.close();
+		// out.close();
 		in.close();
 	}
 
@@ -104,8 +107,8 @@ public class PPM {
 	 * @return The AWT image
 	 */
 	public Image getImage() {
-		MemoryImageSource memoryImageSource = new MemoryImageSource(dim.width,
-				dim.height, data, 0, dim.width);
+		MemoryImageSource memoryImageSource = new MemoryImageSource(dim.width, dim.height, data, 0,
+				dim.width);
 		return Toolkit.getDefaultToolkit().createImage(memoryImageSource);
 	}
 
@@ -124,8 +127,9 @@ public class PPM {
 	private static int rgb(int r, int g, int b) {
 		return (255 << 24 | (r << 16) | (g << 8) | b);
 	}
-	public Color[][] getPicture(){
-		return picture;
-	
+
+	public ColorBean[][] getPicture() {
+		return pictureBean;
 	}
+	
 }

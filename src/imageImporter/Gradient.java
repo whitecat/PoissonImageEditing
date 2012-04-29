@@ -6,14 +6,10 @@ import java.awt.Toolkit;
 import java.awt.image.MemoryImageSource;
 
 public class Gradient {
-	private Color[][] pic;
-	private Color[][] gradientX;
-	private Color[][] gradientY;
-	private Color[][] divG;
+	private ColorBean[][] pic;
 	private ColorBean[][] colorDivG;
 	private ColorBean[][] colorGradientX;
 	private ColorBean[][] colorGradientY;
-	private ColorBean[][] mergedGrad;
 	int width = 0;
 	int height = 0;
 	int[] dataX = null;
@@ -22,23 +18,10 @@ public class Gradient {
 		pic = picture.getPicture();
 		height = pic.length;
 		width = pic[0].length;
-		gradientX = new Color[height][width];
-		gradientY = new Color[height][width];
-		divG = new Color[height][width];
 		colorDivG = new ColorBean[height][width];
 		colorGradientX = new ColorBean[height][width];
 		colorGradientY = new ColorBean[height][width];
-		calculateGradient();
 		calculateColorGradient();
-	}
-
-	private void calculateGradient() {
-		for (int i = 0; i < height; i++) {
-			for (int j = 0; j < width; j++) {
-				gradientX[i][j] = new Color(getChangeX(pic, j, i, 0));
-				gradientY[i][j] = new Color(getChangeY(pic, j, i, 0));
-			}
-		}
 	}
 
 	private void calculateColorGradient() {
@@ -62,14 +45,6 @@ public class Gradient {
 		}
 	}
 
-	public Image getImageColorDivG() {
-		int[] data = getArray(divG, width, height);
-
-		MemoryImageSource memoryImageSource = new MemoryImageSource(width, height, data, 0, width);
-		return Toolkit.getDefaultToolkit().createImage(memoryImageSource);
-
-	}
-
 	public int[] getArray(Color[][] gradient, int width, int height) {
 		int[] data = null;
 		data = new int[height * width];
@@ -79,24 +54,6 @@ public class Gradient {
 			}
 		}
 		return data;
-	}
-
-	private void calculateDivG() {
-		int i, j;
-		int gradSumX, gradSumY;
-
-		for (i = 0; i < height; i++) {
-			for (j = 0; j < width; j++) {
-				gradSumX = getChangeX(gradientX, j, i, 0);
-				gradSumY = getChangeY(gradientY, j, i, 0);
-
-				divG[i][j] = new Color((gradSumX + gradSumY) / 2);
-
-				// ImageSetPixelf(divG, i, j, (gradSumX + gradSumY)/255.0,
-				// width, height) ;
-			}
-		}
-
 	}
 
 	private void calculageDivGPerColor() {
@@ -199,103 +156,25 @@ public class Gradient {
 		}
 	}
 
-	private int getChangeX(Color[][] gradient, int j, int i, int type) {
-		// Reuse the pixel at the start, and end of each array.
-		if (j == 0) {
-			switch (type) {
-			case 'r':
-				return gradient[i][j + 1].getRed() - gradient[i][j].getRed();
-			case 'b':
-				return gradient[i][j + 1].getBlue() - gradient[i][j].getBlue();
-			case 'g':
-				return gradient[i][j + 1].getGreen() - gradient[i][j].getGreen();
-			default:
-				return gradient[i][j + 1].getRGB() - gradient[i][j].getRGB();
-			}
-		} else if (j == width - 1) {
-			switch (type) {
-			case 'r':
-				return gradient[i][j].getRed() - gradient[i][j - 1].getRed();
-			case 'b':
-				return gradient[i][j].getBlue() - gradient[i][j - 1].getBlue();
-			case 'g':
-				return gradient[i][j].getGreen() - gradient[i][j - 1].getGreen();
-			default:
-				return gradient[i][j].getRGB() - gradient[i][j - 1].getRGB();
-			}
-		} else {
-			switch (type) {
-			case 'r':
-				return gradient[i][j + 1].getRed() - gradient[i][j - 1].getRed();
-			case 'b':
-				return gradient[i][j + 1].getBlue() - gradient[i][j - 1].getBlue();
-			case 'g':
-				return gradient[i][j + 1].getGreen() - gradient[i][j - 1].getGreen();
-			default:
-				return gradient[i][j + 1].getRGB() - gradient[i][j - 1].getRGB();
-			}
-		}
-	}
-
-	private int getChangeY(Color[][] gradient, int j, int i, int type) {
-		// Reuse the pixel at the start, and end of each array.
-		if (i == 0) {
-			switch (type) {
-			case 'r':
-				return gradient[i + 1][j].getRed() - gradient[i][j].getRed();
-			case 'b':
-				return gradient[i + 1][j].getBlue() - gradient[i][j].getBlue();
-			case 'g':
-				return gradient[i + 1][j].getGreen() - gradient[i][j].getGreen();
-			default:
-				return gradient[i + 1][j].getRGB() - gradient[i][j].getRGB();
-			}
-		} else if (i == height - 1) {
-			switch (type) {
-			case 'r':
-				return gradient[i][j].getRed() - gradient[i - 1][j].getRed();
-			case 'b':
-				return gradient[i][j].getBlue() - gradient[i - 1][j].getBlue();
-			case 'g':
-				return gradient[i][j].getGreen() - gradient[i - 1][j].getGreen();
-			default:
-				return gradient[i][j].getRGB() - gradient[i - 1][j].getRGB();
-			}
-
-		} else {
-			switch (type) {
-			case 'r':
-				return gradient[i + 1][j].getRed() - gradient[i - 1][j].getRed();
-			case 'b':
-				return gradient[i + 1][j].getBlue() - gradient[i - 1][j].getBlue();
-			case 'g':
-				return gradient[i + 1][j].getGreen() - gradient[i - 1][j].getGreen();
-			default:
-				return gradient[i + 1][j].getRGB() - gradient[i - 1][j].getRGB();
-			}
-
-		}
-	}
-
 	void imageNormalize(double[][] u, double[][] out, int width, int height) {
 		int i, j;
 
 		double max = -10000000.0, min = 1000000000.0;
 
-		for (i = 1; i <= height; i++) {
-			for (j = 1; j <= width; j++) {
+		for (i = 0; i < height; i++) {
+			for (j = 0; j < width; j++) {
 				if (u[i][j] > max)
 					max = u[i][j];
 				if (u[i][j] < min)
 					min = u[i][j];
 			}
 		}
-		for (i = 1; i <= height; i++) {
-			for (j = 1; j <= width; j++) {
+		for (i = 0; i < height; i++) {
+			for (j = 0; j < width; j++) {
 				if ((u[i][j] - min) / (max - min) * 255 < 0) {
 					System.out.println((u[i][j] - min) / (max - min) * 255);
 				}
-				out[i][j] = (u[i][j] - min) / (max - min) * 255;
+				out[i][j] = 255-((u[i][j] - min) / (max - min) * 255);
 			}
 		}
 	}
@@ -342,15 +221,7 @@ public class Gradient {
 
 	}
 
-	public Color[][] getGradientX() {
-		return gradientX;
 
-	}
-
-	public Color[][] getGradientY() {
-		return gradientY;
-
-	}
 
 	public ColorBean[][] getColorGradientX() {
 
@@ -361,11 +232,6 @@ public class Gradient {
 	public ColorBean[][] getColorGradientY() {
 		return colorGradientY;
 
-	}
-
-	public Color[][] getDivG() {
-		calculateDivG();
-		return divG;
 	}
 
 	public ColorBean[][] getColorDivG() {
@@ -381,9 +247,9 @@ public class Gradient {
 		return height;
 	}
 
-	public Image getImageGradient(Color[][] gradient) {
-
-		int[] data = getArray(gradient, width, height);
+	public Image getImageGradient(ColorBean[][] gradient) {
+		
+		int[] data = getArray(changeColorBean(gradient), width, height);
 
 		MemoryImageSource memoryImageSource = new MemoryImageSource(width, height, data, 0, width);
 		return Toolkit.getDefaultToolkit().createImage(memoryImageSource);
@@ -396,7 +262,6 @@ public class Gradient {
 		int gradSumXGreen, gradSumYGreen;
 		ColorBean[][] colorGradientX2 = converted2.getColorGradientX();
 		ColorBean[][] colorGradientY2 = converted2.getColorGradientY();
-		mergedGrad = new ColorBean[height][width];
 		for (i = 0; i < height; i++) {
 			for (j = 0; j < width; j++) {
 				gradSumXRed = (colorGradientX[i][j].getRed() + colorGradientX2[i][j].getRed());
