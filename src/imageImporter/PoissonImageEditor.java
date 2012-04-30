@@ -21,21 +21,21 @@ public class PoissonImageEditor {
 		
 
 		String filename1 = "./images/family.ppm";
-		// String filename2 = "./watermark.ppm";
+//		 String filename2 = "./images/watermark.ppm";
 		PPM picture1 = new PPM(filename1);
 		height = picture1.getPicture().length;
 		width = picture1.getPicture()[0].length;
-		// PPM picture2 = new PPM(filename2);
+//		 PPM picture2 = new PPM(filename2);
 		Gradient converted1 = new Gradient(picture1);
-		// Gradient converted2 = new Gradient(picture2);
-		// converted1.mergeGradient(converted2);
+//		 Gradient converted2 = new Gradient(picture2);
+//		 converted1.mergeGradient(converted2);
 
-		 PoissonSolver test = new PoissonSolver(1000);
+		 PoissonSolver test = new PoissonSolver(500000);
 		 test.integrate(converted1.getColorDivG());
 
 		JFrame frame = new JFrame("ShowImage");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(converted1.getWidth(), converted1.getHeight());
+		frame.setSize(width+18, height+25);
 
 		
 //		ShowImage panel = new ShowImage(converted1.getImageGradient(converted1.getColorGradientX()));
@@ -43,7 +43,7 @@ public class PoissonImageEditor {
 		frame.setContentPane(panel);
 		frame.setVisible(true);
 
-		Util.checkError(test.getResult(), picture1.getPicture(),height, width );
+		//Util.checkError(test.getResult(), picture1.getPicture(),height, width );
 		
 		// img =
 		// converted2.getImageGradient(converted2.changeColorBean(converted2.getColorDivG()));

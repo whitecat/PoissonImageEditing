@@ -24,7 +24,6 @@ public class Jacobi {
 		height = matrix.length;
 		width = matrix[0].length;
 
-
 		previousIteration = new double[height][width];
 		solve(matrix, mask, iterations);
 
@@ -37,52 +36,34 @@ public class Jacobi {
 				for (int j = 0; j < width; j++) {
 
 					if (i == 0) {
-						if (j == 0) {
-							// result[i][j] = (previousIteration[i][j] +
-							// previousIteration[i + 1][j]
-							// + previousIteration[i][j] +
-							// previousIteration[i][j + 1] + matrix[i][j]) / 4;
-						} else if (j > width - 2) {
-							// result[i][j] = (previousIteration[i][j] +
-							// previousIteration[i + 1][j]
-							// + previousIteration[i][j - 1] +
-							// previousIteration[i][j] + matrix[i][j]) / 4;
-						}
-						// else
-						// result[i][j] = (previousIteration[i][j] +
-						// previousIteration[i + 1][j]
-						// + previousIteration[i][j - 1] +
-						// previousIteration[i][j + 1] + matrix[i][j]) / 4;
+//						if (j == 0) {
+//							result[i][j] = (previousIteration[i][j] + previousIteration[i + 1][j]
+//									+ previousIteration[i][j] + previousIteration[i][j + 1] + matrix[i][j]) / 4;
+//						} else if (j > width - 2) {
+//							result[i][j] = (previousIteration[i][j] + previousIteration[i + 1][j]
+//									+ previousIteration[i][j - 1] + previousIteration[i][j] + matrix[i][j]) / 4;
+//						} else
+//							result[i][j] = (previousIteration[i][j] + previousIteration[i + 1][j]
+//									+ previousIteration[i][j - 1] + previousIteration[i][j + 1] + matrix[i][j]) / 4;
 
 					} else if (i > height - 2) {
-						if (j == 0) {
-							// result[i][j] = (previousIteration[i - 1][j] +
-							// previousIteration[i][j]
-							// + previousIteration[i][j] +
-							// previousIteration[i][j + 1] + matrix[i][j]) / 4;
-						} else if (j > width - 2) {
-							// result[i][j] = (previousIteration[i - 1][j] +
-							// previousIteration[i][j]
-							// + previousIteration[i][j - 1] +
-							// previousIteration[i][j ] + matrix[i][j]) / 4;
-						}
-						// else {
-						// result[i][j] = (previousIteration[i-1][j] +
-						// previousIteration[i ][j]
-						// + previousIteration[i][j - 1] +
-						// previousIteration[i][j + 1] + matrix[i][j]) / 4;
-						// }
+//						if (j == 0) {
+//							result[i][j] = (previousIteration[i - 1][j] + previousIteration[i][j]
+//									+ previousIteration[i][j] + previousIteration[i][j + 1] + matrix[i][j]) / 4;
+//						} else if (j > width - 2) {
+//							result[i][j] = (previousIteration[i - 1][j] + previousIteration[i][j]
+//									+ previousIteration[i][j - 1] + previousIteration[i][j] + matrix[i][j]) / 4;
+//						} else {
+//							result[i][j] = (previousIteration[i - 1][j] + previousIteration[i][j]
+//									+ previousIteration[i][j - 1] + previousIteration[i][j + 1] + matrix[i][j]) / 4;
+//						}
 
 					} else if (j == 0) {
-						// result[i][j] = (previousIteration[i - 1][j] +
-						// previousIteration[i + 1][j]
-						// + previousIteration[i][j] + previousIteration[i][j +
-						// 1] + matrix[i][j]) / 4;
+//						result[i][j] = (previousIteration[i - 1][j] + previousIteration[i + 1][j]
+//								+ previousIteration[i][j] + previousIteration[i][j + 1] + matrix[i][j]) / 4;
 					} else if (j > width - 2) {
-						// result[i][j] = (previousIteration[i - 1][j] +
-						// previousIteration[i + 1][j]
-						// + previousIteration[i][j - 1] +
-						// previousIteration[i][j] + matrix[i][j]) / 4;
+//						result[i][j] = (previousIteration[i - 1][j] + previousIteration[i + 1][j]
+//								+ previousIteration[i][j - 1] + previousIteration[i][j] + matrix[i][j]) / 4;
 					} else {
 
 						result[i][j] = (previousIteration[i - 1][j] + previousIteration[i + 1][j]
@@ -90,7 +71,7 @@ public class Jacobi {
 					}
 				}
 			}
-			Util.checkError(result, previousIteration, height,  width );
+			Util.checkError(result, previousIteration, height, width);
 			previousIteration = result;
 
 		}
