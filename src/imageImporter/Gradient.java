@@ -201,7 +201,7 @@ public class Gradient {
 				gradSumYRed = (colorGradientY[i][j].getRed() + colorGradientY2[i][j].getRed());
 				gradSumYGreen = (colorGradientY[i][j].getGreen() + colorGradientY2[i][j].getGreen());
 				gradSumYBlue = (colorGradientY[i][j].getBlue() + colorGradientY2[i][j].getBlue());
-				colorGradientY[i][j] = new ColorBean(gradSumYRed, gradSumYBlue, gradSumYGreen);
+				colorGradientY[i][j] = new ColorBean(gradSumYRed, gradSumYGreen, gradSumYBlue);
 			}
 		}
 	}

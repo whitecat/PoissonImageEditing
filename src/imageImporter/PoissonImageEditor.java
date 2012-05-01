@@ -10,7 +10,7 @@ public class PoissonImageEditor {
 
 	public static void main(String[] args) throws IOException {
 
-		if ((args.length == 3) && args[0].equals("-poisson")) {
+		if ((args.length == 4) && args[0].equals("-poisson")) {
 			new PoissonImageEditor(args[0], args[1], args[2], args[3]);
 		} else if ((args.length == 4) && args[0].equals("-watermark")) {
 			new PoissonImageEditor(args[0], args[1], args[2], args[3]);
@@ -20,7 +20,9 @@ public class PoissonImageEditor {
 			new PoissonImageEditor(args[0], args[1], args[2], "0");
 		} else if ((args.length == 3) && args[0].equals("-gradY")) {
 			new PoissonImageEditor(args[0], args[1], args[2], "0");
-		} else
+		} else if ((args.length == 1)){
+			new PoissonImageEditor("", args[0], "null", "");
+		}else
 			System.out.println("Please use readme to see an example of inputs");
 		// new PoissonImageEditor();
 	}
@@ -50,7 +52,7 @@ public class PoissonImageEditor {
 			test.integrate(converted1.getDivG());
 			result = Util.getImage(test.getResult());
 		} else if (type.equals("-div")) {
-			result = Util.getImage(Util.changeColorBean(converted1.getGradientX()));
+			result = Util.getImage(Util.changeColorBean(converted1.getDivG()));
 		} else if (type.equals("-gradX")) {
 			result = Util.getImage(Util.changeColorBean(converted1.getGradientX()));
 		} else if (type.equals("-gradY")) {

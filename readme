@@ -1,0 +1,20 @@
+This project is run by calling the main class 
+
+java -ea -cp ./poisson.jar imageImporter.PoissonImageEditor [arguments]
+
+argument possibilites:
+This returns the image in a frame
+[image location]
+
+To get the information on a single image
+-div [image location] 
+-gradX [image location] 
+-gradY [image location] 
+
+To get the information on two merged images
+-div [image location] [watermark location]
+-gradX [image location] [watermark location]
+-gradY [image location] [watermark location]
+
+-poisson [image location] [number of iterations]
+-watermark [image location] [watermark location] [number of iterations]
