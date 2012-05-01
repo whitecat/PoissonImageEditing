@@ -1,7 +1,5 @@
 package imageImporter;
 
-import Jama.Matrix;
-
 public class Jacobi {
 
 	private double[][] result;
@@ -29,12 +27,19 @@ public class Jacobi {
 
 	}
 
+	/**
+	 * 
+	 * The Jacobi approximation method
+	 * 
+	 * @param matrix The divergence vector
+	 * @param iterations Number of desired iterations
+	 */
 	private void solve(double[][] matrix, int iterations) {
 		for (int k = 0; k <= iterations; k++) {
 			result = new double[height][width];
 			for (int i = 0; i < height; i++) {
 				for (int j = 0; j < width; j++) {
-
+					//Commented code is the boundary conditions.
 					if (i == 0) {
 //						if (j == 0) {
 //							result[i][j] = (previousIteration[i][j] + previousIteration[i + 1][j]

@@ -23,9 +23,6 @@ public class PoissonSolver {
 	 * @throws UnsupportedEncodingException
 	 */
 	public void integrate(ColorBean[][] divG) throws UnsupportedEncodingException, IOException {
-		// String filename1 = "./mask.ppm";
-		// ColorBean [][]maskOriginal = new PPM(filename1).getPicture();
-
 		double r[][] = null;
 		double b[][] = null;
 		double g[][] = null;

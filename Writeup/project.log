@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.2.20)  30 APR 2012 13:59
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.2.20)  30 APR 2012 17:44
 entering extended mode
 **C:/Users/lenovo/Dropbox/Courses/514/Project/PoissonImageEditing/Writeup/proje
 ct.tex
@@ -392,71 +392,68 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
 <fig/family.jpg, id=44, 1300.86pt x 731.73375pt>
 File: fig/family.jpg Graphic file (type jpg)
  <use fig/family.jpg>
-Package pdftex.def Info: fig/family.jpg used on input line 104.
+Package pdftex.def Info: fig/family.jpg used on input line 99.
 (pdftex.def)             Requested size: 222.59283pt x 125.20816pt.
  [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
-]
+ <C:/Users/lenovo/Dropbox/Courses/514/Project/PoissonImageEditing/Writeup/fig/f
+amily.jpg>]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 127.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 130.
 
 <fig/notations.jpg, id=65, 341.47575pt x 121.05225pt>
 File: fig/notations.jpg Graphic file (type jpg)
  <use fig/notations.jpg>
-Package pdftex.def Info: fig/notations.jpg used on input line 132.
+Package pdftex.def Info: fig/notations.jpg used on input line 135.
 (pdftex.def)             Requested size: 222.59283pt x 78.90836pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 133.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 136.
 
 [2 <C:/Users/lenovo/Dropbox/Courses/514/Project/PoissonImageEditing/Writeup/fig
-/family.jpg> <C:/Users/lenovo/Dropbox/Courses/514/Project/PoissonImageEditing/W
-riteup/fig/notations.jpg>] <fig/gradientX.jpg, id=87, 781.11826pt x 440.847pt>
+/notations.jpg>] <fig/gradientX.jpg, id=96, 781.11826pt x 440.847pt>
 File: fig/gradientX.jpg Graphic file (type jpg)
 
 <use fig/gradientX.jpg>
-Package pdftex.def Info: fig/gradientX.jpg used on input line 193.
+Package pdftex.def Info: fig/gradientX.jpg used on input line 218.
 (pdftex.def)             Requested size: 222.59283pt x 125.62251pt.
  <fig/gradientY.jpg, id=97, 781.7205pt x 440.24475pt>
 File: fig/gradientY.jpg Graphic file (type jpg)
 
 <use fig/gradientY.jpg>
-Package pdftex.def Info: fig/gradientY.jpg used on input line 223.
+Package pdftex.def Info: fig/gradientY.jpg used on input line 225.
 (pdftex.def)             Requested size: 222.59283pt x 125.35686pt.
- [3 <C:/Users/lenovo/Dropbox/Courses/514/Project/PoissonImageEditing/Writeup/fi
-g/gradientX.jpg>]
-<fig/divG.jpg, id=119, 782.32275pt x 439.04025pt>
+ <fig/divG.jpg, id=98, 782.32275pt x 439.04025pt>
 File: fig/divG.jpg Graphic file (type jpg)
- <use fig/divG.jpg>
-Package pdftex.def Info: fig/divG.jpg used on input line 231.
+
+<use fig/divG.jpg>
+Package pdftex.def Info: fig/divG.jpg used on input line 233.
 (pdftex.def)             Requested size: 222.59283pt x 124.92009pt.
-
-
-LaTeX Warning: Reference `poissonGrid' on page 4 undefined on input line 259.
-
-<fig/matrix.jpg, id=124, 320.397pt x 201.1515pt>
+ [3] <fig/matrix.jpg, id=125, 320.397pt x 201.1515pt>
 File: fig/matrix.jpg Graphic file (type jpg)
- <use fig/matrix.jpg>
-Package pdftex.def Info: fig/matrix.jpg used on input line 263.
+
+<use fig/matrix.jpg>
+Package pdftex.def Info: fig/matrix.jpg used on input line 262.
 (pdftex.def)             Requested size: 222.59283pt x 139.74924pt.
  [4 <C:/Users/lenovo/Dropbox/Courses/514/Project/PoissonImageEditing/Writeup/fi
-g/gradientY.jpg> <C:/Users/lenovo/Dropbox/Courses/514/Project/PoissonImageEditi
-ng/Writeup/fig/divG.jpg> <C:/Users/lenovo/Dropbox/Courses/514/Project/PoissonIm
-ageEditing/Writeup/fig/matrix.jpg>]
-<fig/familyResult.jpg, id=138, 770.27776pt x 411.939pt>
+g/gradientX.jpg> <C:/Users/lenovo/Dropbox/Courses/514/Project/PoissonImageEditi
+ng/Writeup/fig/gradientY.jpg> <C:/Users/lenovo/Dropbox/Courses/514/Project/Pois
+sonImageEditing/Writeup/fig/divG.jpg> <C:/Users/lenovo/Dropbox/Courses/514/Proj
+ect/PoissonImageEditing/Writeup/fig/matrix.jpg>]
+<fig/familyResult.jpg, id=140, 770.27776pt x 411.939pt>
 File: fig/familyResult.jpg Graphic file (type jpg)
 
 <use fig/familyResult.jpg>
 Package pdftex.def Info: fig/familyResult.jpg used on input line 299.
 (pdftex.def)             Requested size: 222.59283pt x 119.0381pt.
 
-<fig/familyBoarder.jpg, id=139, 770.88pt x 413.1435pt>
+<fig/familyBoarder.jpg, id=141, 770.88pt x 413.1435pt>
 File: fig/familyBoarder.jpg Graphic file (type jpg)
 
 <use fig/familyBoarder.jpg>
 Package pdftex.def Info: fig/familyBoarder.jpg used on input line 306.
 (pdftex.def)             Requested size: 222.59283pt x 119.2916pt.
- <fig/mask.jpg, id=140, 781.7205pt x 440.847pt>
+ <fig/mask.jpg, id=142, 781.7205pt x 440.847pt>
 File: fig/mask.jpg Graphic file (type jpg)
 
 <use fig/mask.jpg>
@@ -477,19 +474,15 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 350.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 350.
 Package rerunfilecheck Info: File `project.out' has not changed.
 (rerunfilecheck)             Checksum: 54DB6AD799AA14786D94FE3934E3714E;480.
-
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 6248 strings out of 494045
- 87803 string characters out of 3152414
- 180706 words of memory out of 3000000
- 9392 multiletter control sequences out of 15000+200000
+ 6247 strings out of 494045
+ 87751 string characters out of 3152414
+ 183852 words of memory out of 3000000
+ 9391 multiletter control sequences out of 15000+200000
  29067 words of font info for 72 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 29i,11n,45p,1033b,359s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,11n,45p,1033b,324s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/opt/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/opt/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmbx10.pfb><C:/opt/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/cm/cmex10.pfb><C:/opt/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
@@ -502,9 +495,9 @@ msfonts/cm/cmr5.pfb><C:/opt/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb>
 .pfb><C:/opt/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/opt/MiKTeX 2.9/fon
 ts/type1/urw/times/utmr8a.pfb><C:/opt/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on project.pdf (6 pages, 986450 bytes).
+Output written on project.pdf (6 pages, 985656 bytes).
 PDF statistics:
- 216 PDF objects out of 1000 (max. 8388607)
+ 218 PDF objects out of 1000 (max. 8388607)
  45 named destinations out of 1000 (max. 500000)
  118 words of extra memory for PDF output out of 10000 (max. 10000000)
 

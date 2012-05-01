@@ -1,6 +1,5 @@
 package imageImporter;
 
-
 public class Gradient {
 	private ColorBean[][] pic;
 	private ColorBean[][] colorDivG;
@@ -10,6 +9,12 @@ public class Gradient {
 	int height = 0;
 	int[] dataX = null;
 
+	/**
+	 * Gradient Constructor It calculates the gradient of an image
+	 * 
+	 * @param picture
+	 *            Picture to be decomposed.
+	 */
 	public Gradient(PPM picture) {
 		pic = picture.getPicture();
 		height = pic.length;
@@ -20,6 +25,9 @@ public class Gradient {
 		calculateColorGradient();
 	}
 
+	/**
+	 * Calculates both X and Y gradient of an image
+	 */
 	private void calculateColorGradient() {
 		int gradSumXRed, gradSumYRed;
 		int gradSumXBlue, gradSumYBlue;
@@ -41,7 +49,10 @@ public class Gradient {
 		}
 	}
 
-	private void calculageDivGPerColor() {
+	/**
+	 * Calculates the divergence of the image
+	 */
+	private void calculageDivG() {
 		int i, j;
 		int gradSumXRed, gradSumYRed;
 		int gradSumXBlue, gradSumYBlue;
@@ -63,6 +74,19 @@ public class Gradient {
 		}
 	}
 
+	/**
+	 * Calculates change between two pixels in the X direction
+	 * 
+	 * @param gradient
+	 *            gradient to be calculated
+	 * @param j
+	 *            y coordinate
+	 * @param i
+	 *            x coordinate
+	 * @param type
+	 *            color to be calculated
+	 * @return the color difference between pixels
+	 */
 	private int getChangeX(ColorBean[][] gradient, int j, int i, int type) {
 		// Reuse the pixel at the start, and end of each array.
 		if (j == 0) {
@@ -101,6 +125,19 @@ public class Gradient {
 		}
 	}
 
+	/**
+	 * Calculates change between two pixels in the Y direction
+	 * 
+	 * @param gradient
+	 *            gradient to be calculated
+	 * @param j
+	 *            y coordinate
+	 * @param i
+	 *            x coordinate
+	 * @param type
+	 *            color to be calculated
+	 * @return the color difference between pixels
+	 */
 	private int getChangeY(ColorBean[][] gradient, int j, int i, int type) {
 		// Reuse the pixel at the start, and end of each array.
 		if (i == 0) {
@@ -141,23 +178,47 @@ public class Gradient {
 		}
 	}
 
+	/**
+	 * Merges two gradients together
+	 * 
+	 * @param gradientToMerge
+	 *            The gradient you wish to be merged.
+	 */
+	public void mergeGradient(Gradient gradientToMerge) {
+		int i, j;
+		int gradSumXRed, gradSumYRed;
+		int gradSumXBlue, gradSumYBlue;
+		int gradSumXGreen, gradSumYGreen;
+		ColorBean[][] colorGradientX2 = gradientToMerge.getGradientX();
+		ColorBean[][] colorGradientY2 = gradientToMerge.getGradientY();
+		for (i = 0; i < height; i++) {
+			for (j = 0; j < width; j++) {
+				gradSumXRed = (colorGradientX[i][j].getRed() + colorGradientX2[i][j].getRed());
+				gradSumXGreen = (colorGradientX[i][j].getGreen() + colorGradientX2[i][j].getGreen());
+				gradSumXBlue = (colorGradientX[i][j].getBlue() + colorGradientX2[i][j].getBlue());
+				colorGradientX[i][j] = new ColorBean(gradSumXRed, gradSumXGreen, gradSumXBlue);
 
+				gradSumYRed = (colorGradientY[i][j].getRed() + colorGradientY2[i][j].getRed());
+				gradSumYGreen = (colorGradientY[i][j].getGreen() + colorGradientY2[i][j].getGreen());
+				gradSumYBlue = (colorGradientY[i][j].getBlue() + colorGradientY2[i][j].getBlue());
+				colorGradientY[i][j] = new ColorBean(gradSumYRed, gradSumYBlue, gradSumYGreen);
+			}
+		}
+	}
 
-
-
-	public ColorBean[][] getColorGradientX() {
+	public ColorBean[][] getGradientX() {
 
 		return colorGradientX;
 
 	}
 
-	public ColorBean[][] getColorGradientY() {
+	public ColorBean[][] getGradientY() {
 		return colorGradientY;
 
 	}
 
-	public ColorBean[][] getColorDivG() {
-		calculageDivGPerColor();
+	public ColorBean[][] getDivG() {
+		calculageDivG();
 		return colorDivG;
 	}
 
@@ -167,27 +228,5 @@ public class Gradient {
 
 	public int getHeight() {
 		return height;
-	}
-
-	public void mergeGradient(Gradient converted2) {
-		int i, j;
-		int gradSumXRed, gradSumYRed;
-		int gradSumXBlue, gradSumYBlue;
-		int gradSumXGreen, gradSumYGreen;
-		ColorBean[][] colorGradientX2 = converted2.getColorGradientX();
-		ColorBean[][] colorGradientY2 = converted2.getColorGradientY();
-		for (i = 0; i < height; i++) {
-			for (j = 0; j < width; j++) {
-				gradSumXRed = (colorGradientX[i][j].getRed() + colorGradientX2[i][j].getRed());
-				gradSumXGreen = (colorGradientX[i][j].getGreen() + colorGradientX2[i][j].getGreen());
-				gradSumXBlue = (colorGradientX[i][j].getBlue() + colorGradientX2[i][j].getBlue());
-				colorGradientX[i][j] = new ColorBean(gradSumXRed, gradSumXGreen, gradSumXBlue);
-				
-				gradSumYRed = (colorGradientY[i][j].getRed() + colorGradientY2[i][j].getRed());
-				gradSumYGreen = (colorGradientY[i][j].getGreen() + colorGradientY2[i][j].getGreen());
-				gradSumYBlue = (colorGradientY[i][j].getBlue() + colorGradientY2[i][j].getBlue());
-				colorGradientY[i][j] = new ColorBean(gradSumYRed, gradSumYBlue, gradSumYGreen);
-			}
-		}
 	}
 }
