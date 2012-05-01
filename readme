@@ -18,3 +18,4 @@ To get the information on two merged images
 
 -poisson [image location] [number of iterations]
 -watermark [image location] [watermark location] [number of iterations]
+
